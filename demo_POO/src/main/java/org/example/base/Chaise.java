@@ -19,4 +19,7 @@ public class Chaise {
     public String toString() {
         return "Je suis une Chaise avec " + nombrePieds + " pieds " + " en " + materiaux + " de couleur " + couleur + " à un prix " + prix;
     }
+    public void afficher (){
+        System.out.println(toString());
+    }
 }

@@ -16,5 +16,9 @@ public class BaseChaise {
 
         System.out.println("Chaise3");
         System.out.println(chaise3.toString());
+
+        System.out.println();
+
+        chaise1.afficher();
     }
            }
