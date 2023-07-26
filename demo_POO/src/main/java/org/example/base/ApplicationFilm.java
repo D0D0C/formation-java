@@ -7,11 +7,11 @@ public class ApplicationFilm {
         Film film2 = new Film("Avatar2", "James cameron","2022-12-14", "action");
 
         System.out.println("Film1");
-        System.out.println(film1.toString());
+        System.out.println(film1);
         System.out.println();
 
         System.out.println("Film2");
-        System.out.println(film2.toString());
+        System.out.println(film2);
 
     }
 }

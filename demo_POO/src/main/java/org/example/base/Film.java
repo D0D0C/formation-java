@@ -39,7 +39,7 @@ public class Film {
 
     @Override
     public String toString() {
-        return "titre= " + titre+"," + " realisateur= " + realisateur+"," + " date de sortie= " + annee+"," + " genre= " + genre;
+        return "Titre= " + titre+"," + " Realisateur= " + realisateur+"," + " date de sortie= " + annee+"," + " genre= " + genre;
     }
 }
 
