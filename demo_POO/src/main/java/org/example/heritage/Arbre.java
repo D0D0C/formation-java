@@ -10,6 +10,6 @@ public class Arbre extends Plante{
     @Override
     public void afficher() {
         super.afficher();
-        System.out.println("et de circonférence" + circonference);
+        System.out.println(" et ma circonférence est de " + circonference);
     }
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.heritage;
 
 import org.example.heritage.Animal;
 import org.example.heritage.Chat;

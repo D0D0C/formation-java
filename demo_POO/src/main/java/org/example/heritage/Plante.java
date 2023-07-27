@@ -28,12 +28,10 @@ public class Plante {
     public String getCouleurdesfeuilles() {
         return couleurdesfeuilles;
     }
-
     public void setCouleurdesfeuilles(String couleurdesfeuilles) {
         this.couleurdesfeuilles = couleurdesfeuilles;
-
     }
-    public  void afficher (){
-        System.out.print("Je suis une plante :" + nom+ "de hauteur :" + hauteur+ "la couleur de mes feuilles est :" + couleurdesfeuilles);
+    public void afficher (){
+        System.out.print("Je suis une plante de type " + this.nom + " avec une hauteur de  " + this.hauteur + " . La couleur de mes feuilles est " + this.couleurdesfeuilles);
     }
 }
