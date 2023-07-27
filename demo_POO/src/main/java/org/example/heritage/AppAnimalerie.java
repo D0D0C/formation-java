@@ -12,7 +12,7 @@ public class AppAnimalerie {
 
         //System.out.println(animal.annenaissance)); pas possible car anneNaissance protected
 
-        Chat chat  = new Chat("Garfield", 10, "Roux");
+        Chat chat  = new Chat("tata", 10, "Roux");
         chat.crier();
 
         Chien chien = new Chien("Rex", 10, "Roux et bleu", 1.20);

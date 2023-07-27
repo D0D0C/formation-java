@@ -1,6 +1,6 @@
 package org.example.livre;
 
-public class MainLivre {
+public class AppBiblio {
     public static void main(String[] args) {
         Bibliotheque bibliotheque = new Bibliotheque(5);
 
