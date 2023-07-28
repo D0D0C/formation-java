@@ -1,29 +1,61 @@
 package org.example.livre;
 
 public class Livre {
-
     private String titre;
     private String auteur;
-    private int nombreDePages;
+    private int nbPages;
     private boolean estEmprunte;
 
-    public Livre(String titre, String auteur, int nombreDePages) {
+    public Livre(String titre, String auteur, int nbPages) {
         this.titre = titre;
         this.auteur = auteur;
-        this.nombreDePages = nombreDePages;
+        this.nbPages = nbPages;
         this.estEmprunte = false;
     }
 
+    public String getTitre() {
+        return titre;
+    }
 
-    public void setEmprunte(boolean estEmprunte) {
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getAuteur() {
+        return auteur;
+    }
+
+    public void setAuteur(String auteur) {
+        this.auteur = auteur;
+    }
+
+    public int getNbPages() {
+        return nbPages;
+    }
+
+    public void setNbPages(int nbPages) {
+        this.nbPages = nbPages;
+    }
+
+    public boolean isEstEmprunte() {
+        return estEmprunte;
+    }
+
+    public void setEstEmprunte(boolean estEmprunte) {
         this.estEmprunte = estEmprunte;
     }
 
+    @Override
+    public String toString() {
+        return "Livre : " +
+                "titre = '" + titre + '\'' +
+                ", auteur = '" + auteur + '\'' +
+                ", nbPages = " + nbPages +
+                ", estEmprunte = " + estEmprunte +
+                '.';
+    }
 
-    public void afficherInformations() {
-        System.out.println("Titre: " + titre);
-        System.out.println("Auteur: " + auteur);
-        System.out.println("Nombre de pages: " + nombreDePages);
-        System.out.println("Emprunté: " + estEmprunte);
+    public void changeStatus(){
+        this.estEmprunte = !this.estEmprunte;
     }
 }

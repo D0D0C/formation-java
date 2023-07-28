@@ -1,24 +1,43 @@
 package org.example.livre;
 
+import org.example.livre.Biblio;
+import org.example.livre.Livre;
+
 public class AppBiblio {
     public static void main(String[] args) {
-        Bibliotheque bibliotheque = new Bibliotheque(5);
 
-        Livre livre1 = new Livre("Livre 1", "Auteur 1", 200);
-        Livre livre2 = new Livre("Livre 2", "Auteur 2", 150);
-        Livre livre3 = new Livre("Livre 3", "Auteur 3", 300);
+        Biblio biblio = new Biblio();
+        System.out.println("#####################");
+        biblio.afficheAll();
+        System.out.println("#####################");
 
-        bibliotheque.ajouterLivre(livre1);
-        bibliotheque.ajouterLivre(livre2);
-        bibliotheque.ajouterLivre(livre3);
+        Livre livre1 = new Livre("Titre 1","Auteur 1",123);
+        Livre livre2 = new Livre("Titre 2","Auteur 2",123);
+        Livre livre3 = new Livre("Titre 3","Auteur 3",123);
+        Livre livre4 = new Livre("Titre 4","Auteur 4",123);
+        biblio.addLivre(livre1);
+        biblio.addLivre(livre2);
+        biblio.addLivre(livre3);
+        biblio.addLivre(livre4);
+        biblio.addLivre(new Livre("Titre 5","Auteur 5",123));
 
-        System.out.println("Liste des livres avant emprunt/retour:");
-        bibliotheque.afficherListeLivres();
+        biblio.afficheAll();
 
-        bibliotheque.emprunterLivre(livre2);
-        bibliotheque.retournerLivre(livre1);
+        System.out.println("##################### Emprunt du livre 4");
 
-        System.out.println("\nListe des livres après emprunt/retour:");
-        bibliotheque.afficherListeLivres();
+        biblio.empruntLivre(livre4);
+        biblio.afficheAll();
+
+        System.out.println("##################### Rendre du livre 4");
+
+        biblio.rendreLivre(livre4);
+        biblio.afficheAll();
+
+        System.out.println("##################### Suppression du livre 3");
+
+        biblio.removeLivre(livre3);
+        biblio.afficheAll();
+
+
     }
 }
