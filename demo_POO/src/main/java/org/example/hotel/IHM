@@ -16,9 +16,25 @@ public class IHM {
 
             switch (choix) {
                 case 1:
-                    // Ajouter un client
-                    // Lire les informations nécessaires depuis le clavier
-                    // Appeler la méthode pour ajouter le client à l'hôtel
+                   private static void ajouterClient() {
+                    System.out.print("Entrez l'identifiant du client : ");
+                    int clientID = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("Entrez le nom du client : ");
+                    String clientnom = scanner.nextLine();
+
+                    System.out.print("Entrez le prénom du client : ");
+                    String clientprenom = scanner.nextLine();
+
+                    System.out.print("Entrez le numéro de téléphone du client : ");
+                    int NumTel = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Client nouveauClient = new Client(clientID, clientnom, clientprenom, NumTel);
+                    hotel.ajouterClient(nouveauClient);
+                    System.out.println("Client ajouté avec succès !");
+                }
                     break;
                 case 2:
                     // Ajouter une chambre
