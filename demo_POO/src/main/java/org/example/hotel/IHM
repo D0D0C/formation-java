@@ -1,0 +1,54 @@
+package Hotel;
+
+import java.util.Scanner;
+
+public class IHM {
+    private static Scanner scanner = new Scanner(System.in);
+    private static Hotel hotel = new Hotel();
+
+        public static void main(String[] args) {
+        boolean quitter = false;
+
+        while (!quitter) {
+            afficherMenu();
+            int choix = scanner.nextInt();
+            scanner.nextLine(); // Clear the newline character
+
+            switch (choix) {
+                case 1:
+                    // Ajouter un client
+                    // Lire les informations nécessaires depuis le clavier
+                    // Appeler la méthode pour ajouter le client à l'hôtel
+                    break;
+                case 2:
+                    // Ajouter une chambre
+                    break;
+                case 3:
+                    // Effectuer une réservation
+                    break;
+                case 4:
+                    // Afficher les informations de l'hôtel (clients, chambres, réservations)
+                    break;
+                case 5:
+                    quitter = true;
+                    System.out.println("Au revoir !");
+                    break;
+                default:
+                    System.out.println("Choix invalide. Veuillez entrer un chiffre valide.");
+                    break;
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static void afficherMenu() {
+        System.out.println("----- Menu -----");
+        System.out.println("1. Ajouter un client");
+        System.out.println("2. Ajouter une chambre");
+        System.out.println("3. Effectuer une réservation");
+        System.out.println("4. Afficher les informations de l'hôtel");
+        System.out.println("5. Quitter");
+        System.out.print("Choisissez une option : ");
+    }
+}
