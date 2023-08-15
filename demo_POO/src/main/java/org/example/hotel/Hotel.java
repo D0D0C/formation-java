@@ -1,28 +1,38 @@
 package Hotel;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Hotel {
 
-    private ArrayList<Chambre> chambres;
+public class Hotel<ClientHotel> {
 
-    private ArrayList<Client> client;
+    private ArrayList<Client> listeClients;
 
-    private ArrayList<Reservation> reservation;
+    private ArrayList<Chambre> listeChambres;
 
-      public class ajouterClient {
-        private List<Client> clients;
-        private List<Chambre> chambres;
-        private List<Reservation> reservations;
+    private ArrayList<Reservation> listeReservations;
 
-        public void Hotel() {
-            clients = new ArrayList<>();
-            chambres = new ArrayList<>();
-            reservations = new ArrayList<>();
-        }
+    private String nom;
 
+    public Hotel(String nom) {
+        this.nom = nom;
+        this.listeClients = new ArrayList<>();
     }
-}
+
+    public String getNom() {
+        return nom;
+    }
+
+
+     public int rechercherClientParID(int clientID) {
+        for (Client client : listeClients) {
+                if (client.getClientID() == clientID) {
+                     return (clientID) ;
+                 }
+                }
+                 return clientID;
+         }
+     }
+
+
 
 
