@@ -1,44 +1,44 @@
-package org.example.hotel;
+package Hotel;
 
 public class Chambre {
 
-    private int numeroChambre;
+    private int numChambre;
 
-    private boolean statusChambre;
+    private boolean statChambre;
 
-    private int nombreLits;
+    private int nbrLits;
 
     public double tarif;
 
-    public Chambre(int numeroChambre, boolean statusChambre, int nombreLits, double tarif) {
-        this.numeroChambre = numeroChambre;
-        this.statusChambre = statusChambre;
-        this.nombreLits = nombreLits;
+    public Chambre(int numChambre, boolean statChambre, int nbrLits, double tarif) {
+        this.numChambre = numChambre;
+        this.statChambre = statChambre;
+        this.nbrLits = nbrLits;
         this.tarif = tarif;
     }
 
-    public int getNumeroChambre() {
-        return numeroChambre;
+    public int getNumChambre() {
+        return numChambre;
     }
 
-    public void setNumeroChambre(int numeroChambre) {
-        this.numeroChambre = numeroChambre;
+    public void setNumChambre(int numChambre) {
+        this.numChambre = numChambre;
     }
 
-    public boolean isStatusChambre() {
-        return statusChambre;
+    public boolean isStatChambre() {
+        return statChambre;
     }
 
-    public void setStatusChambre(boolean statusChambre) {
-        this.statusChambre = statusChambre;
+    public void setStatChambre(boolean statChambre) {
+        this.statChambre = statChambre;
     }
 
-    public int getNombreLits() {
-        return nombreLits;
+    public int getNbrLits() {
+        return nbrLits;
     }
 
-    public void setNombreLits(int nombreLits) {
-        this.nombreLits = nombreLits;
+    public void setNbrLits(int nbrLits) {
+        this.nbrLits = nbrLits;
     }
 
     public double getTarif() {
@@ -48,4 +48,16 @@ public class Chambre {
     public void setTarif(double tarif) {
         this.tarif = tarif;
     }
+
+
+    @Override
+    public String toString() {
+        return "Chambre n°" + numChambre + " : statut : " +
+                  " nombre de lits : "
+                + nbrLits + ", tarifs : " + tarif;
+    }
 }
+
+
+
+
