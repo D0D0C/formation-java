@@ -1,28 +1,30 @@
-package org.example.hotel;
+package Hotel;
 
 public class Client {
 
-    private int identifiantClient;
+    private int clientID;
 
     private String nom;
 
     private String prenom;
 
-    private int numTel;
+    private String numTel;
 
-    public Client(int identifiantClient, String nom, String prenom, int numTel) {
-        this.identifiantClient = identifiantClient;
+    private static int nbrClient = 0;
+
+    public Client(int clientID, String nom, String prenom, String numTel) {
+        this.clientID = clientID;
         this.nom = nom;
         this.prenom = prenom;
         this.numTel = numTel;
     }
 
-    public int getIdentifiantClient() {
-        return identifiantClient;
+    public int getClientID() {
+        return clientID;
     }
 
-    public void setIdentifiantClient(int identifiantClient) {
-        this.identifiantClient = identifiantClient;
+    public void setClientID(int clientID) {
+        this.clientID = clientID;
     }
 
     public String getNom() {
@@ -41,11 +43,34 @@ public class Client {
         this.prenom = prenom;
     }
 
-    public int getNumTel() {
+    public String getNumTel() {
         return numTel;
     }
 
-    public void setNumTel(int numTel) {
+    public void setNumTel(String numTel) {
         this.numTel = numTel;
     }
+
+    public static int getNbrClient() {
+        return nbrClient;
+    }
+
+    public static void setNbrClient(int nbrClient) {
+        Client.nbrClient = nbrClient;
+    }
+
+    @Override
+    public String toString() {
+        return clientID + " : "+
+                "nom = " + nom +
+                ", prenom = " + prenom +
+                ", phone = " + numTel +
+                '.';
+    }
 }
+
+
+
+
+
+
