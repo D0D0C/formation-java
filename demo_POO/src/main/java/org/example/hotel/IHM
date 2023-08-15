@@ -1,70 +1,160 @@
-package Hotel;
+package IHM;
+
+import Hotel.Hotel;
 
 import java.util.Scanner;
 
+import Hotel.Reservation;
+import Hotel.Chambre;
+
+import Hotel.Client;
+
 public class IHM {
+
     private static Scanner scanner = new Scanner(System.in);
-    private static Hotel hotel = new Hotel();
 
-        public static void main(String[] args) {
-        boolean quitter = false;
+    private static Hotel hotel;
 
-        while (!quitter) {
-            afficherMenu();
-            int choix = scanner.nextInt();
-            scanner.nextLine(); // Clear the newline character
+// ******************  Démarage et demande nom de l'hotel *****************************
+
+    public static void start() {
+        System.out.println("Quelle est le nom de l'hôtel ? ");
+        String nomHotel = scanner.nextLine();
+        hotel = new Hotel(nomHotel);
+        System.out.println(hotel.getNom()+ " Hotel créé ! ");
+        afficherMenu();
+    }
+
+// ******************  Affichage menu ************************************************
+
+    public static void afficherMenu(){
+        int choix;
+
+        do {
+            System.out.println("******** Menu principal ********");
+            System.out.println();
+            System.out.println("1. Ajouter un client");
+            System.out.println("2. Afficher la liste des clients");
+            System.out.println("3. Afficher les réservations d'un clients");
+            System.out.println("4. Ajouter une réservation");
+            System.out.println("5. Annuler une réservation");
+            System.out.println("6. Afficher la liste des réservations");
+            System.out.println("0. Quitter");
+            System.out.println("Votre choix :");
+
+            choix= scanner.nextInt();
+            scanner.nextLine();
+
+// ******************  Choix menu ************************************************
 
             switch (choix) {
                 case 1:
-                   private static void ajouterClient() {
-                    System.out.print("Entrez l'identifiant du client : ");
-                    int clientID = scanner.nextInt();
-                    scanner.nextLine();
-
-                    System.out.print("Entrez le nom du client : ");
-                    String clientnom = scanner.nextLine();
-
-                    System.out.print("Entrez le prénom du client : ");
-                    String clientprenom = scanner.nextLine();
-
-                    System.out.print("Entrez le numéro de téléphone du client : ");
-                    int NumTel = scanner.nextInt();
-                    scanner.nextLine();
-
-                    Client nouveauClient = new Client(clientID, clientnom, clientprenom, NumTel);
-                    hotel.ajouterClient(nouveauClient);
-                    System.out.println("Client ajouté avec succès !");
-                }
+                    ajoutClient();
                     break;
                 case 2:
-                    // Ajouter une chambre
+                    afficherClients();
                     break;
-                case 3:
-                    // Effectuer une réservation
+                case 3 :
+                    afficherReservationsClient();
                     break;
-                case 4:
-                    // Afficher les informations de l'hôtel (clients, chambres, réservations)
+                case 4 :
+                    ajoutReservation();
                     break;
-                case 5:
-                    quitter = true;
-                    System.out.println("Au revoir !");
+                case 5 :
+                    annulerReservation();
+                    break;
+                case 6 :
+                    afficherReservations();
+                    break;
+                case 0 :
+                    System.out.println("Merci au revoir");
                     break;
                 default:
-                    System.out.println("Choix invalide. Veuillez entrer un chiffre valide.");
-                    break;
+                    System.out.println("Choix invalide");
+
             }
-        }
+
+        }while (choix != 0);
+
+        scanner.close();
+
+    }
+
+// ******************  Méthode ajouter client  ************************************************
+
+    public static void ajoutClient(){
+        System.out.println();
+        System.out.println("Veuillez entrer le nom du client");
+        String nom = scanner.nextLine();
+        System.out.println("Veuillez entrer le prenom du client");
+        String prenom = scanner.nextLine();
+        System.out.println("Veuillez entrer le numéro de téléphone du client");
+        String numTel = scanner.nextLine();
+        System.out.println("La saisie du client est terminée");
 
         scanner.close();
     }
+// ******************  Méthode afficher client  ************************************************
+    public static void afficherClients(){
+        System.out.println();
+        System.out.println("Veuillez entrer l'identification du client");
+        int clientID = scanner.nextInt();
+        scanner.nextLine();
 
-    private static void afficherMenu() {
-        System.out.println("----- Menu -----");
-        System.out.println("1. Ajouter un client");
-        System.out.println("2. Ajouter une chambre");
-        System.out.println("3. Effectuer une réservation");
-        System.out.println("4. Afficher les informations de l'hôtel");
-        System.out.println("5. Quitter");
-        System.out.print("Choisissez une option : ");
+        Object client = hotel.rechercherClientParID(clientID);
+
+        if (clientID != 0) {
+            System.out.println(nom);
+        } else {
+            System.out.println("Aucun client avec cet ID n'a été trouvé.");
+        }
+
+        System.out.println();
+
     }
+ // ******************  Méthode Afficher réservation  ************************************************
+    public static void afficherReservationsClient(){
+        System.out.println();
+        System.out.println("Veuillez entrer le numéro de réservation");
+        int idResa = scanner.nextInt();
+        System.out.println(Reservation.idResa);
+        System.out.println();
+
+    }
+
+ // ******************  Méthode ajouter réservation  ************************************************
+    public static void ajoutReservation(){
+        System.out.println();
+        System.out.println();
+        System.out.println("Veuillez entrer le nombre de lits du client");
+        String nom = scanner.nextLine();
+        System.out.println("Veuillez entrer le prenom du client");
+        String prenom = scanner.nextLine();
+        System.out.println("Veuillez entrer le numéro de téléphone du client");
+        String numTel = scanner.nextLine();
+        System.out.println();
+
+    }
+ // ******************  Méthode annuler réservation  ************************************************
+    public static void annulerReservation(){
+        System.out.println();
+        System.out.println("Veuillez entrer le numéro de réservation");
+        //int idResa = scanner.nextInt();
+       // if (idResa = 0) {
+            //System.out.println("Aucun client avec cet ID n'a été trouvé.");
+        //}
+        //else {
+
+        }
+// ******************  Méthode Afficher réservation  ************************************************
+
+    public static void afficherReservations(){
+        System.out.println();
+        System.out.println("Veuillez entrer le numéro de réservation");
+        int idResa = scanner.nextInt();
+        scanner.nextLine();
+
+
+    }
+
 }
